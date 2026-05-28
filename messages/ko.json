@@ -1,0 +1,157 @@
+{
+  "Metadata": {
+    "title": "bible1 — 한국어 예배 송출 성경",
+    "description": "예배 현장을 위한 한국어 성경 슬라이드 송출 도구입니다."
+  },
+  "Chrome": {
+    "homeAria": "bible1 홈",
+    "brandSubtitle": "예배 송출",
+    "navigationLabel": "내비게이션"
+  },
+  "Navigation": {
+    "service": "예배",
+    "help": "도움말",
+    "settings": "설정",
+    "read": "읽기",
+    "grid": "그리드"
+  },
+  "Language": {
+    "label": "화면 언어",
+    "korean": "한국어",
+    "english": "English"
+  },
+  "Home": {
+    "eyebrow": "bible1",
+    "title": "본문을 바로 찾고,\n예배 화면에 띄우세요.",
+    "subtitle": "예배 흐름을 끊지 않도록 검색, 발표자 화면, 송출 화면을 한 동선으로 묶었습니다.",
+    "prompt": "시23, 요 3:16, 창세기 1장처럼 입력하세요.",
+    "privacy": "Enter로 열기 · Cmd/Ctrl+K 검색 복귀 · Live는 발표자 화면에서 열기"
+  },
+  "Search": {
+    "sectionLabel": "성경 본문 검색",
+    "label": "성경 본문 검색 · 예: 시23, 시편 23편 5절, 요 3:16, ㅊㅅㄱ 1",
+    "placeholder": "시23",
+    "resultsLabel": "성경 검색 결과",
+    "empty": "검색 결과 없음",
+    "idle": "본문을 입력하면 바로 장과 절 후보가 나타납니다.",
+    "enterHint": "Enter",
+    "open": "열기"
+  },
+  "Chapter": {
+    "gridEyebrow": "장 그리드",
+    "metadataDescription": "{reference} 예배 송출용 절 선택 화면.",
+    "navigationLabel": "장 이동",
+    "previous": "‹ 이전 장",
+    "next": "다음 장 ›",
+    "operatorHint": "Enter로 선택 · 방향키로 이동 · Cmd/Ctrl+K 검색",
+    "verseGridLabel": "{reference} 절 선택",
+    "verseTileLabel": "{reference} {ordinal}번째 슬라이드, 표시 절 번호 {number}",
+    "sourceVerse": "원문 {number}",
+    "readingEyebrow": "읽기"
+  },
+  "Presenter": {
+    "eyebrow": "발표자",
+    "nextVerse": "다음 절",
+    "lastVerse": "마지막 절입니다.",
+    "chapterJump": "장 바로가기",
+    "liveProjectorEyebrow": "Live Projector",
+    "liveProjectorTitle": "깨끗한 송출 탭 열기",
+    "liveProjectorBody": "발표자 화면은 그대로 조정실로 남습니다. 새 탭은 회중에게 보이는 깨끗한 송출 화면이고, 이 페이지가 절 이동과 암전을 계속 제어합니다.",
+    "liveProjectorAria": "Live Projector 새 탭으로 열기",
+    "liveProjectorCta": "Live Projector 열기"
+  },
+  "SlideController": {
+    "next": "→/Space 다음",
+    "previous": "← 이전",
+    "chapterMove": "PgUp/PgDn 장 이동",
+    "blackout": "B 암전",
+    "fullscreen": "F 전체 화면",
+    "liveTab": "L Live 탭",
+    "help": "? 도움말",
+    "liveOpened": "Live Projector가 새 탭에서 열렸습니다. 발표자 탭은 계속 조정용으로 사용하세요.",
+    "jump": "절 이동 {buffer}",
+    "keyboardTitle": "키보드",
+    "shortcuts": {
+      "next": "다음 절",
+      "previous": "이전 절",
+      "jump": "절 번호로 점프",
+      "chapter": "이전/다음 장 첫 절로 이동",
+      "blackout": "관중 화면 암전",
+      "fullscreen": "현재 화면 전체 화면 토글",
+      "live": "Live Projector를 새 탭으로 열기",
+      "escape": "도움말 닫기 또는 입력 취소"
+    },
+    "close": "닫기"
+  },
+  "Help": {
+    "eyebrow": "도움말",
+    "title": "예배 진행 가이드와 키보드",
+    "startEyebrow": "먼저 여기서 시작",
+    "serviceTitle": "예배 진행 방법",
+    "importantEyebrow": "가장 중요한 버튼",
+    "liveTitle": "Live Projector",
+    "liveBody": "Live Projector가 새 탭으로 열리는 이유는 그 탭을 프로젝터나 외부 디스플레이로 옮기기 위해서입니다. 발표자 화면은 계속 조정실로 남습니다. 새로 열린 깨끗한 탭은 회중에게 보이는 화면이고, 발표자 탭은 절 이동과 암전 제어를 계속 담당합니다.",
+    "liveNote": "브라우저 전체 화면은 여전히 Chrome/Safari의 권한에 속합니다. 앱은 사용자 동작 이후 탭을 전체 화면으로 요청할 수 있지만 모든 브라우저 주소 표시줄을 모든 모드에서 제거할 수는 없습니다. 가장 안전한 예배 흐름은 Live Projector 탭을 열고, 그 탭을 프로젝터 화면으로 옮긴 다음, 발표자 화면에서 계속 조정하는 것입니다.",
+    "keyboardTitle": "예배 키보드 약속",
+    "opsTitle": "운영 메모",
+    "serviceSteps": [
+      "홈 화면에서 시23, 요 3:16, 시편 23편 5절, Ps 23.5처럼 본문을 검색합니다.",
+      "장 그리드에서 미리 볼 절을 고릅니다. 각 카드에 절 앞부분이 보여서 마우스를 올리지 않아도 내용을 확인할 수 있습니다.",
+      "발표자 화면을 조정실처럼 사용합니다. 방향키로 절을 이동하고, B로 관중 화면을 암전하며, PageUp/PageDown으로 장을 이동합니다.",
+      "회중에게 깨끗한 화면을 보낼 준비가 되면 Live Projector 버튼을 누르거나 L을 눌러 송출 탭을 엽니다."
+    ],
+    "shortcuts": [
+      ["Cmd/Ctrl+K", "검색으로 돌아가기"],
+      ["→ / Space", "다음 절"],
+      ["←", "이전 절"],
+      ["Home / End", "현재 장의 처음 / 마지막 절"],
+      ["PageUp / PageDown", "이전 / 다음 장 첫 절"],
+      ["숫자 + Enter", "절 번호로 점프"],
+      ["B", "관중 화면 암전"],
+      ["F", "현재 화면 전체 화면 토글"],
+      ["L", "Live Projector를 새 탭으로 열기"],
+      ["?", "도움말 오버레이"],
+      ["Esc", "도움말 닫기 또는 입력 취소"],
+      ["Cmd/Ctrl+Z", "이전 절로 되돌리기"]
+    ],
+    "corpusNote": "현재 본문 데이터: {chapters}개 장과 {verses}개 절이 보존되어 있습니다.",
+    "legacyNote": "/Genesis1?v=3 같은 기존 주소는 정식 발표자 경로로 리디렉션되어 오래된 북마크도 계속 사용할 수 있습니다.",
+    "syncNote": "송출 설정은 같은 브라우저 안에서 저장됩니다. 배포 환경에 Supabase 기반 예배 상태 저장이 구성되면 여러 화면과 더 안정적으로 동기화됩니다.",
+    "publicCorpusNote": "이 공개 저장소에는 성경 본문이 포함되어 있지 않습니다. Scripture routes require a configured authorized corpus database."
+  },
+  "Settings": {
+    "eyebrow": "설정",
+    "title": "송출 설정",
+    "displayTitle": "화면 표시",
+    "description": "이 설정은 같은 브라우저의 발표자 화면, Live Projector, 읽기 화면에 즉시 적용됩니다.",
+    "showVerseNumber": "절 번호 표시",
+    "warmWhite": "따뜻한 흰색 송출",
+    "transition": "전환 효과",
+    "crossfade": "부드러운 전환",
+    "none": "전환 없음"
+  },
+  "Service": {
+    "eyebrow": "예배 순서",
+    "title": "예배 {id}",
+    "inputLabel": "예배 본문 붙여넣기",
+    "titleForSave": "예배 {id}",
+    "defaultInput": "시 23:1-6, 요 14:1-3, 롬 8:28",
+    "sync": {
+      "loading": "Supabase 확인 중",
+      "saving": "Supabase 저장 중",
+      "synced": "Supabase 동기화됨",
+      "error": "로컬 저장됨 · Supabase 재시도 필요",
+      "local": "로컬 저장 모드"
+    }
+  },
+  "NotFound": {
+    "title": "본문을 찾을 수 없습니다",
+    "description": "닫힌 성경 본문 데이터 밖의 주소입니다.",
+    "returnHome": "검색으로 돌아가기"
+  },
+  "Error": {
+    "eyebrow": "오류",
+    "title": "문제가 발생했습니다",
+    "retry": "다시 시도"
+  }
+}

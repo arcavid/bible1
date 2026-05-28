@@ -1,0 +1,206 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    var(--font-bible-sans), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR',
+    sans-serif;
+  --color-stage-black: #000000;
+  --color-stage-white: #fffdf7;
+  --color-presenter-bg: #08090b;
+  --color-presenter-panel: #101318;
+  --color-presenter-border: #252b35;
+  --color-live-blue: #3b82f6;
+}
+
+:root {
+  color-scheme: dark;
+  background: #000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: radial-gradient(
+    circle at top,
+    #111827 0,
+    #050607 38rem,
+    #000 100%
+  );
+  color: #f9fafb;
+  font-family:
+    var(--font-bible-sans),
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Apple SD Gothic Neo',
+    'Malgun Gothic',
+    'Noto Sans KR',
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a[href],
+button,
+input[type='checkbox'],
+input[type='radio'],
+select,
+summary,
+label:has(input),
+[role='button'],
+[role='option'],
+[role='tab'],
+[role='menuitem'] {
+  cursor: pointer;
+}
+
+button:disabled,
+select:disabled,
+[aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 4px;
+}
+
+::selection {
+  background: #dbeafe;
+  color: #0f172a;
+}
+
+.stage-text {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.projection-preview {
+  container-type: inline-size;
+  padding: clamp(0.85rem, 4.5cqw, 3.75rem);
+}
+
+.projection-preview-content {
+  gap: clamp(0.65rem, 3cqw, 2.5rem);
+}
+
+.projection-preview-number {
+  position: relative;
+  top: clamp(0rem, 0.55cqw, 0.45rem);
+  font-size: clamp(0.95rem, 4.1cqw, 4.75rem);
+  line-height: 1;
+}
+
+.projection-preview-text {
+  font-size: clamp(1.05rem, 6cqw, 6rem);
+  line-height: 1.24;
+  letter-spacing: -0.01em;
+}
+
+.projection-preview-reference {
+  font-size: clamp(0.72rem, 2.55cqw, 3rem);
+  line-height: 1.15;
+}
+
+.projection-live-canvas {
+  padding: clamp(1.25rem, 5vmin, 5rem);
+}
+
+.projection-live-content {
+  gap: clamp(0.75rem, 3vmin, 3.5rem);
+}
+
+.projection-live-number {
+  position: relative;
+  top: clamp(0rem, 0.8vmin, 0.8rem);
+  font-size: clamp(1.25rem, 5vmin, 5rem);
+  line-height: 1;
+}
+
+.projection-live-text {
+  font-size: clamp(1.7rem, 7.6vmin, 7rem);
+  line-height: 1.35;
+}
+
+.projection-live-reference {
+  font-size: clamp(1rem, 3.5vmin, 3.5rem);
+  line-height: 1.15;
+}
+
+.verse-preview-clamp {
+  display: -webkit-box;
+  height: 3rem;
+  max-height: 3rem;
+  overflow: hidden;
+  line-height: 1.5rem;
+  word-break: keep-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.projection-stage {
+  color: var(--bible1-stage-color, #fffdf7);
+}
+
+.projection-transition {
+  transition:
+    opacity 150ms ease-out,
+    transform 150ms ease-out,
+    color 150ms ease-out;
+}
+
+html[data-bible1-tone='warm'] {
+  --bible1-stage-color: #fff1c2;
+}
+
+html[data-bible1-tone='white'],
+html:not([data-bible1-tone]) {
+  --bible1-stage-color: #fffdf7;
+}
+
+html[data-bible1-verse-numbers='hide'] .projection-verse-number {
+  display: none;
+}
+
+html[data-bible1-transition='none'] .projection-transition {
+  transition: none !important;
+}
+
+.slide-fade {
+  transition:
+    opacity 150ms ease-out,
+    transform 150ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

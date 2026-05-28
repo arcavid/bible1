@@ -1,0 +1,157 @@
+{
+  "Metadata": {
+    "title": "bible1 — Korean worship Bible projection",
+    "description": "A Korean Bible slide and projection tool for worship services."
+  },
+  "Chrome": {
+    "homeAria": "bible1 home",
+    "brandSubtitle": "Worship projection",
+    "navigationLabel": "Navigation"
+  },
+  "Navigation": {
+    "service": "Service",
+    "help": "Help",
+    "settings": "Settings",
+    "read": "Read",
+    "grid": "Grid"
+  },
+  "Language": {
+    "label": "Display language",
+    "korean": "한국어",
+    "english": "English"
+  },
+  "Home": {
+    "eyebrow": "bible1",
+    "title": "Find the passage,\nand put it on screen.",
+    "subtitle": "Search, presenter view, and live projection stay in one operator flow so worship does not slow down.",
+    "prompt": "Try Ps 23, John 3:16, Genesis 1, or Korean shortcuts like 시23.",
+    "privacy": "Enter opens · Cmd/Ctrl+K returns to search · Live opens from the presenter screen"
+  },
+  "Search": {
+    "sectionLabel": "Bible passage search",
+    "label": "Bible passage search · examples: Ps 23, John 3:16, Psalm 23:5",
+    "placeholder": "Ps 23",
+    "resultsLabel": "Bible search results",
+    "empty": "No results",
+    "idle": "Type a passage to see chapter and verse suggestions.",
+    "enterHint": "Enter",
+    "open": "Open"
+  },
+  "Chapter": {
+    "gridEyebrow": "Chapter grid",
+    "metadataDescription": "{reference} verse-selection screen for worship projection.",
+    "navigationLabel": "Chapter navigation",
+    "previous": "‹ Previous chapter",
+    "next": "Next chapter ›",
+    "operatorHint": "Enter selects · Arrow keys move · Cmd/Ctrl+K returns to search",
+    "verseGridLabel": "{reference} verse selection",
+    "verseTileLabel": "{reference}, slide {ordinal}, displayed verse number {number}",
+    "sourceVerse": "Source {number}",
+    "readingEyebrow": "Reading"
+  },
+  "Presenter": {
+    "eyebrow": "Presenter",
+    "nextVerse": "Next verse",
+    "lastVerse": "This is the last verse.",
+    "chapterJump": "Chapter jump",
+    "liveProjectorEyebrow": "Live Projector",
+    "liveProjectorTitle": "Open a clean projection tab",
+    "liveProjectorBody": "Keep the presenter screen as the control room. The new tab is the clean output for the congregation, while this page continues to control verse movement and blackout.",
+    "liveProjectorAria": "Open Live Projector in a new tab",
+    "liveProjectorCta": "Open Live Projector"
+  },
+  "SlideController": {
+    "next": "→/Space next",
+    "previous": "← previous",
+    "chapterMove": "PgUp/PgDn chapter",
+    "blackout": "B blackout",
+    "fullscreen": "F fullscreen",
+    "liveTab": "L Live tab",
+    "help": "? Help",
+    "liveOpened": "Live Projector opened in a new tab. Keep using the presenter tab for control.",
+    "jump": "Jump to verse {buffer}",
+    "keyboardTitle": "Keyboard",
+    "shortcuts": {
+      "next": "Next verse",
+      "previous": "Previous verse",
+      "jump": "Jump to a verse number",
+      "chapter": "Move to the first verse of the previous/next chapter",
+      "blackout": "Black out the audience screen",
+      "fullscreen": "Toggle fullscreen for this screen",
+      "live": "Open Live Projector in a new tab",
+      "escape": "Close help or clear input"
+    },
+    "close": "Close"
+  },
+  "Help": {
+    "eyebrow": "Help",
+    "title": "Worship operator guide and keyboard",
+    "startEyebrow": "Start here",
+    "serviceTitle": "How to run a service",
+    "importantEyebrow": "Most important button",
+    "liveTitle": "Live Projector",
+    "liveBody": "Live Projector opens a separate clean tab so you can move that tab to the projector or external display. The presenter screen remains the control room. The new tab is what the congregation sees; the presenter tab keeps controlling verse movement and blackout.",
+    "liveNote": "Browser fullscreen is still controlled by Chrome/Safari permissions. The app can request fullscreen after a user action, but no web app can remove every browser toolbar in every mode. The safest service flow is to open the Live Projector tab, move that tab to the projector display, and keep controlling from the presenter screen.",
+    "keyboardTitle": "Worship keyboard contract",
+    "opsTitle": "Operator notes",
+    "serviceSteps": [
+      "From the home screen, search passages like Ps 23, John 3:16, Psalm 23:5, or 시23.",
+      "Choose the verse you want to preview from the chapter grid. Each card shows the beginning of the verse so you do not have to hover to identify it.",
+      "Use the presenter screen like the control room. Move by verse with the arrow keys, black out the audience screen with B, and move chapters with PageUp/PageDown.",
+      "When the clean output is ready for the congregation, press the Live Projector button or L to open the projection tab."
+    ],
+    "shortcuts": [
+      ["Cmd/Ctrl+K", "Return to search"],
+      ["→ / Space", "Next verse"],
+      ["←", "Previous verse"],
+      ["Home / End", "First / last verse in the current chapter"],
+      ["PageUp / PageDown", "First verse of previous / next chapter"],
+      ["Number + Enter", "Jump to verse number"],
+      ["B", "Black out audience screen"],
+      ["F", "Toggle fullscreen for this screen"],
+      ["L", "Open Live Projector in a new tab"],
+      ["?", "Help overlay"],
+      ["Esc", "Close help or clear input"],
+      ["Cmd/Ctrl+Z", "Return to previous verse"]
+    ],
+    "corpusNote": "Current corpus: {chapters} chapters and {verses} verses are preserved.",
+    "legacyNote": "Old addresses like /Genesis1?v=3 redirect to the canonical presenter route, so existing bookmarks continue to work.",
+    "syncNote": "Projection settings are stored in this browser. When Supabase-backed service state is configured in deployment, multiple screens can sync more reliably.",
+    "publicCorpusNote": "This public repository does not include Bible text. Scripture routes require a configured authorized corpus database."
+  },
+  "Settings": {
+    "eyebrow": "Settings",
+    "title": "Projection settings",
+    "displayTitle": "Display",
+    "description": "These settings apply immediately to the presenter screen, Live Projector, and reading view in the same browser.",
+    "showVerseNumber": "Show verse numbers",
+    "warmWhite": "Warm white projection",
+    "transition": "Transition",
+    "crossfade": "Smooth crossfade",
+    "none": "No transition"
+  },
+  "Service": {
+    "eyebrow": "Service order",
+    "title": "Service {id}",
+    "inputLabel": "Paste service passages",
+    "titleForSave": "Service {id}",
+    "defaultInput": "Ps 23:1-6, John 14:1-3, Rom 8:28",
+    "sync": {
+      "loading": "Checking Supabase",
+      "saving": "Saving to Supabase",
+      "synced": "Synced with Supabase",
+      "error": "Saved locally · Supabase retry needed",
+      "local": "Local save mode"
+    }
+  },
+  "NotFound": {
+    "title": "Passage not found",
+    "description": "This address is outside the sealed Bible corpus.",
+    "returnHome": "Return to search"
+  },
+  "Error": {
+    "eyebrow": "Error",
+    "title": "Something went wrong",
+    "retry": "Try again"
+  }
+}
