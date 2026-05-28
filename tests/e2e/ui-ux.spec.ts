@@ -315,8 +315,8 @@ test.describe('industry-standard UI/UX smoke coverage', () => {
     )
     expect(
       firstRowTiles.length,
-      'wide chapter grid should not pack more than ten verse cards into one row',
-    ).toBeLessThanOrEqual(10)
+      'wide chapter grid should use a predictable 1–10 first row instead of an arbitrary 8-card row',
+    ).toBe(10)
     expect(
       firstRowTiles[0]?.width ?? 0,
       'verse cards should be wide enough for Korean preview text',
@@ -392,6 +392,67 @@ test.describe('industry-standard UI/UX smoke coverage', () => {
       rgbBrightness(colors.color),
       'Live Projector CTA text should be bright and readable',
     ).toBeGreaterThan(180)
+  })
+
+  test('presenter page exposes copy-verse and next-chapter controls for slide prep', async ({
+    page,
+  }) => {
+    await page.context().grantPermissions(['clipboard-read', 'clipboard-write'])
+    await page.goto('/Psalms/23/5')
+
+    const verseText = await page
+      .locator('[data-projection-verse-text]')
+      .innerText()
+    const normalizedVerse = verseText.trim().replace(/\s+/g, ' ')
+    expect(normalizedVerse.length).toBeGreaterThan(5)
+
+    await page.getByRole('button', { name: /본문만 복사/ }).click()
+    await expect(page.getByText(/본문만 복사했습니다/)).toBeVisible()
+    const copied = await page.evaluate(() => navigator.clipboard.readText())
+    expect(copied).toBe(normalizedVerse)
+    expect(copied).not.toContain('시편')
+    expect(copied).not.toContain('23:5')
+    expect(copied).not.toContain('5절')
+
+    const nextChapter = page.getByRole('link', {
+      name: /다음 장.*시편 24장 1절/,
+    })
+    await expect(nextChapter).toBeVisible()
+    await nextChapter.click()
+    await expect(page).toHaveURL(/\/Psalms\/24\/1$/)
+  })
+
+  test('service playlist can copy resolved verse text without opening the presenter page', async ({
+    page,
+  }) => {
+    await page.context().grantPermissions(['clipboard-read', 'clipboard-write'])
+    await page.goto('/service/ui-ux-copy')
+
+    await page.getByLabel('예배 본문 붙여넣기').fill('시 23:5-6, 요 3:16')
+
+    const psalmItem = page.locator('[data-service-plan-item]').filter({
+      hasText: /시편 23장 5.*6절/,
+    })
+    await expect(psalmItem).toBeVisible()
+    await expect(
+      psalmItem.locator('[data-service-plan-copy-text]'),
+    ).toContainText(/\S/)
+
+    const copyText = (
+      await psalmItem.locator('[data-service-plan-copy-text]').innerText()
+    )
+      .trim()
+      .replace(/\s+\n/g, '\n')
+    await psalmItem.getByRole('button', { name: /본문만 복사/ }).click()
+    await expect(psalmItem.getByText(/본문만 복사했습니다/)).toBeVisible()
+    const copied = await page.evaluate(() => navigator.clipboard.readText())
+
+    expect(copied).toBe(copyText)
+    expect(copied).not.toContain('시편')
+    expect(copied).not.toContain('23장')
+    expect(copied).not.toContain('5절')
+    expect(copied).not.toContain('6절')
+    await expect(page).toHaveURL(/\/service\/ui-ux-copy$/)
   })
 
   test('mobile presenter keeps the preview proportional and the keyboard tray unwrapped', async ({

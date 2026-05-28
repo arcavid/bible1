@@ -51,14 +51,25 @@
   },
   "Presenter": {
     "eyebrow": "Presenter",
+    "nextMove": "Next move",
     "nextVerse": "Next verse",
     "lastVerse": "This is the last verse.",
+    "previousChapterCta": "Previous chapter",
+    "nextChapterCta": "Next chapter",
     "chapterJump": "Chapter jump",
     "liveProjectorEyebrow": "Live Projector",
     "liveProjectorTitle": "Open a clean projection tab",
     "liveProjectorBody": "Keep the presenter screen as the control room. The new tab is the clean output for the congregation, while this page continues to control verse movement and blackout.",
     "liveProjectorAria": "Open Live Projector in a new tab",
-    "liveProjectorCta": "Open Live Projector"
+    "liveProjectorCta": "Open Live Projector",
+    "copyEyebrow": "Slide prep",
+    "copyTitle": "Copy verse text only",
+    "copyBody": "Copies only the current verse text to the clipboard: no reference, chapter label, or verse number. Use it when preparing worship slides."
+  },
+  "Copy": {
+    "verseOnly": "Copy verse text only",
+    "copied": "Copied verse text only.",
+    "failed": "Copy failed. Check browser clipboard permission."
   },
   "SlideController": {
     "next": "→/Space next",
@@ -136,6 +147,8 @@
     "inputLabel": "Paste service passages",
     "titleForSave": "Service {id}",
     "defaultInput": "Ps 23:1-6, John 14:1-3, Rom 8:28",
+    "copyLoading": "Loading verse text.",
+    "copyUnavailable": "Verse text could not be loaded. Check the configured Scripture database.",
     "sync": {
       "loading": "Checking Supabase",
       "saving": "Saving to Supabase",

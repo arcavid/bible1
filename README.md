@@ -2,6 +2,8 @@
 
 Open-source code for **bible1**, a Korean-first Bible presentation app for church worship, Scripture reading, and live projector operation.
 
+Production demo: <https://www.bible1.app/>
+
 ## Public repository boundary
 
 This repository is intentionally **code-only**.

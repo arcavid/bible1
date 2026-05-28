@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 
 import { AppChrome } from '@/components/app-chrome'
+import { CopyVerseButton } from '@/components/copy-verse-button.client'
 import { SlideController } from '@/components/slide-controller.client'
 import { SlideStage } from '@/components/slide-stage'
 import { Link } from '@/i18n/navigation'
@@ -63,10 +64,16 @@ export default async function VersePage({
     ref.chapter > 1
       ? verseHref({ book: ref.book, chapter: ref.chapter - 1, verse: 1 })
       : null
+  const previousChapterReference = previousChapterHref
+    ? formatKoreanRef({ book: ref.book, chapter: ref.chapter - 1, verse: 1 })
+    : null
   const nextChapterHref =
     book && ref.chapter < book.chapters
       ? verseHref({ book: ref.book, chapter: ref.chapter + 1, verse: 1 })
       : null
+  const nextChapterReference = nextChapterHref
+    ? formatKoreanRef({ book: ref.book, chapter: ref.chapter + 1, verse: 1 })
+    : null
   const reference = formatKoreanRef(ref)
   const currentHref = verseHref(ref)
   const currentLiveHref = liveHref(ref)
@@ -99,18 +106,52 @@ export default async function VersePage({
         <aside className="space-y-5">
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5">
             <p className="text-xs tracking-[0.3em] text-blue-300 uppercase">
-              {t('nextVerse')}
+              {t('nextMove')}
             </p>
             {neighbors.next ? (
               <Link
                 href={verseHref(neighbors.next)}
-                className="mt-3 block rounded-2xl border border-white/10 p-4 hover:bg-white/10"
+                className="mt-3 block rounded-2xl border border-blue-300/25 bg-blue-500/10 p-4 hover:bg-blue-500/20 focus-visible:ring-4 focus-visible:ring-blue-200/60"
               >
-                {formatKoreanRef(neighbors.next)}
+                <span className="block text-sm font-semibold text-blue-100">
+                  {t('nextVerse')}
+                </span>
+                <span className="mt-1 block text-lg font-bold text-white">
+                  {formatKoreanRef(neighbors.next)}
+                </span>
               </Link>
             ) : (
               <p className="mt-3 text-slate-400">{t('lastVerse')}</p>
             )}
+            <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              {previousChapterHref && previousChapterReference ? (
+                <Link
+                  href={previousChapterHref}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-sm text-slate-300 hover:bg-white/10 focus-visible:ring-4 focus-visible:ring-blue-200/60"
+                >
+                  <span className="block text-xs font-semibold tracking-[0.18em] text-slate-400 uppercase">
+                    {t('previousChapterCta')}
+                  </span>
+                  <span className="mt-1 block font-bold text-white">
+                    {previousChapterReference}
+                  </span>
+                </Link>
+              ) : null}
+              {nextChapterHref && nextChapterReference ? (
+                <Link
+                  href={nextChapterHref}
+                  className="rounded-2xl border border-blue-300/30 bg-blue-500/15 p-3 text-sm text-blue-100 hover:bg-blue-500/25 focus-visible:ring-4 focus-visible:ring-blue-200/60"
+                  data-next-chapter-shortcut
+                >
+                  <span className="block text-xs font-semibold tracking-[0.18em] text-blue-200 uppercase">
+                    {t('nextChapterCta')}
+                  </span>
+                  <span className="mt-1 block font-bold text-white">
+                    {nextChapterReference}
+                  </span>
+                </Link>
+              ) : null}
+            </div>
           </div>
           <div
             className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5"
@@ -166,6 +207,21 @@ export default async function VersePage({
               {t('liveProjectorCta')}
               <span className="ml-2 text-blue-100">↗</span>
             </Link>
+          </div>
+
+          <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-5">
+            <p className="text-xs font-bold tracking-[0.28em] text-blue-200 uppercase">
+              {t('copyEyebrow')}
+            </p>
+            <h2 className="mt-2 text-xl font-bold text-white">
+              {t('copyTitle')}
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-slate-300">
+              {t('copyBody')}
+            </p>
+            <div className="mt-4">
+              <CopyVerseButton text={verse.text.trim().replace(/\s+/g, ' ')} />
+            </div>
           </div>
         </aside>
       </section>

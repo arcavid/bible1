@@ -51,14 +51,25 @@
   },
   "Presenter": {
     "eyebrow": "발표자",
+    "nextMove": "다음 이동",
     "nextVerse": "다음 절",
     "lastVerse": "마지막 절입니다.",
+    "previousChapterCta": "이전 장",
+    "nextChapterCta": "다음 장",
     "chapterJump": "장 바로가기",
     "liveProjectorEyebrow": "Live Projector",
     "liveProjectorTitle": "깨끗한 송출 탭 열기",
     "liveProjectorBody": "발표자 화면은 그대로 조정실로 남습니다. 새 탭은 회중에게 보이는 깨끗한 송출 화면이고, 이 페이지가 절 이동과 암전을 계속 제어합니다.",
     "liveProjectorAria": "Live Projector 새 탭으로 열기",
-    "liveProjectorCta": "Live Projector 열기"
+    "liveProjectorCta": "Live Projector 열기",
+    "copyEyebrow": "슬라이드 준비",
+    "copyTitle": "본문만 복사",
+    "copyBody": "장절 표시, 참조, 번호 없이 현재 절의 본문 텍스트만 클립보드에 담습니다. 예배 슬라이드에 바로 붙여넣을 때 사용하세요."
+  },
+  "Copy": {
+    "verseOnly": "본문만 복사",
+    "copied": "본문만 복사했습니다.",
+    "failed": "복사하지 못했습니다. 브라우저 권한을 확인하세요."
   },
   "SlideController": {
     "next": "→/Space 다음",
@@ -136,6 +147,8 @@
     "inputLabel": "예배 본문 붙여넣기",
     "titleForSave": "예배 {id}",
     "defaultInput": "시 23:1-6, 요 14:1-3, 롬 8:28",
+    "copyLoading": "본문을 불러오는 중입니다.",
+    "copyUnavailable": "본문을 불러오지 못했습니다. 성경 본문 데이터베이스 구성을 확인하세요.",
     "sync": {
       "loading": "Supabase 확인 중",
       "saving": "Supabase 저장 중",

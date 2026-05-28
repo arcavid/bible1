@@ -15,11 +15,11 @@ export async function ChapterGrid({
   const reference = `${chapter.korean} ${chapter.chapter}장`
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-5 py-8 md:px-8">
+    <section className="mx-auto w-full max-w-screen-2xl px-5 py-8 md:px-8">
       <VerseGridKeyboard />
       <div
         data-verse-grid
-        className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,7rem),1fr))] gap-4 rounded-[2rem] border border-white/10 bg-black/35 p-4 md:gap-5 md:p-6"
+        className="grid grid-cols-2 gap-4 rounded-[2rem] border border-white/10 bg-black/35 p-4 sm:grid-cols-3 md:grid-cols-5 md:gap-5 md:p-6 xl:grid-cols-10"
         aria-label={t('verseGridLabel', { reference })}
       >
         {chapter.verses.map((verse) => (
